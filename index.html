@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Query Generator</title>
+</head>
+<body>
+ <div class="container mt-4">
+
+   <center><h1>QUERY GENERATOR</h1></center> <br>
+
+     <div style="display: flex;">
+        <div>
+            <input placeholder="Forms Definitions UID" id="forms_definitions_uid" class="form-label " size="50"/> <br>
+            <input placeholder="Licensee Code" id="licensee_code" class="form-label " size="50"/><br>
+            <input disabled class="form-label " type="date"/>   Add Date Time (auto filled) <br>            
+            <input placeholder="Added By (Your Username)" id="added_by" class="form-label " size="50"/><br>
+            <input type="date" class="form-label " id="begin_date"/>   Begin Date<br>
+            <input class="form-label " type="date" disabled/>   Change Date Time (auto filled)<br>
+            <input placeholder="Changed By (Your Username)" class="form-label " size="50" id="changed_by"/><br>
+            <input class="form-label " size="50" id="end_date" type="date"/>   End Date<br>
+            <input placeholder="File Name" class="form-label " size="50" id="file_name"/><br>
+            <input placeholder="Form Code" class="form-label " size="50" id="form_code"/><br>
+        </div>
+        <div style="margin-left: 40px">
+            <input placeholder="Form Code Alt" class="form-label " size="50" id="form_code_alt"/><br>
+            <input placeholder="Form List Order" class="form-label " size="50" id="form_list_order" type="number"/><br>
+            <input placeholder="Form Name" class="form-label " size="50" id="form_name"/><br>
+            <input placeholder="Form Name Print" class="form-label " size="50" id="form_name_print"/><br>
+            <input placeholder="Form Number" class="form-label " size="50" id="form_number"/><br>
+            <input placeholder="Group Print Order" class="form-label " size="50" id="group_print_order"/><br>      
+            <span style="font-weight: bold;">Include in forms list       </span> <select id="include_in_forms_list" style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>   
+            <span style="font-weight: bold;">Include On Policy Dec   </span> <select id="include_on_policy_dec"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>    
+            <span style="font-weight: bold;">Internal Use Only          </span> <select id="internal_use_only_flag"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>  <br>  
+        </div>            
+
+    </div>
+    <button style="margin-top: 20px" id="generate" class="btn btn-danger">Generate Query</button> <br>
+    <div class="d-none" id="showQuery">
+        <textarea cols="180" rows="15" id="finalQuery" style="margin-top: 20px;"></textarea>
+    </div>
+</div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!-- 
+    IF NOT EXISTS ( SELECT 1 FROM forms_definitions  WHERE   forms_definitions_uid = 'nvfd092920211001' and licensee_code = 'FALCON')
+BEGIN
+    
+    INSERT  INTO forms_definitions ( forms_definitions_uid, licensee_code, add_date_time, added_by, begin_date, change_date_time, 
+changed_by, end_date, file_name, form_code, form_code_alt, form_list_order, form_name, form_name_print, form_number, group_print_order, 
+include_in_forms_list, include_on_policy_dec, internal_use_only_flag, module, object_name, output_codes, owner_object, parameters_to_pass, 
+parent_name, production_order, revision_date, security_profile_code, state_code, sub_parent_name_1, sub_parent_name_2, sub_parent_name_3, 
+sub_parent_name_4, user_input_flag, template_type, mapping_xml, product_group, sign_supported, include_in_merge, output_file_name_prefix, form_code_to_print)
+
+   VALUES ('nvfd092920211001', 'FALCON', getdate(), 'nverma_FALCON', '1/1/2020', getdate(), 'nverma_FALCON', null, 'FRH-01-030L', 
+   'FRH-01-030L', '', '0', 'FRH-01-030L-Acknowledgement Letter', 'Acknowledgement Letter', 'FRH-01-030L', 'A70', 'Y', 'N', 'N', 
+   'SUBMISSIONS', '', '', 'SUBMISSIONS', '', 'SUBMISSIONS', '', '7/1/2021', '', 'US', '', '', '', '', 'N', 'PDF', 'FRH-01-030L', 
+   '', NULL, NULL, 'FRH-01-030L-Acknowledgement Letter', 'FRH-01-030L')
+END
+-->
