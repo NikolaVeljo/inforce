@@ -10,7 +10,7 @@
 <body>
  <div class="container mt-4">
 
-   <center><h1>QUERY GENERATOR</h1></center> <br>
+   <center><h2>QUERY GENERATOR FOR OMS FORMS</h2></center> <br>
 
      <div style="display: flex;">
         <div>
@@ -19,6 +19,7 @@
             <input disabled class="form-label " type="date"/>   Add Date Time (auto filled) <br>            
             <input placeholder="Added By (Your Username)" id="added_by" class="form-label " size="50"/><br>
             <input type="date" class="form-label " id="begin_date"/>   Begin Date<br>
+            <input type="date" class="form-label " id="revision_date"/>   Revision Date<br>
             <input class="form-label " type="date" disabled/>   Change Date Time (auto filled)<br>
             <input placeholder="Changed By (Your Username)" class="form-label " size="50" id="changed_by"/><br>
             <input class="form-label " size="50" id="end_date" type="date"/>   End Date<br>
@@ -34,8 +35,85 @@
             <input placeholder="Group Print Order" class="form-label " size="50" id="group_print_order"/><br>      
             <span style="font-weight: bold;">Include in forms list       </span> <select id="include_in_forms_list" style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>   
             <span style="font-weight: bold;">Include On Policy Dec   </span> <select id="include_on_policy_dec"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>    
-            <span style="font-weight: bold;">Internal Use Only          </span> <select id="internal_use_only_flag"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>  <br>  
-        </div>            
+            <span style="font-weight: bold;">Internal Use Only          </span> <select id="internal_use_only_flag"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>  
+            <span style="font-weight: bold;">Module                          </span> <select id="module"  style="margin-top: 5px;"> <option value="SUBMISSIONS">Submissions</option> <option value="POLICY">Policy</option> </select>  <br> 
+            <span style="font-weight: bold;">Owner Object                </span> <select id="owner_object"  style="margin-top: 5px;"> <option value="SUBMISSIONS">Submissions</option> <option value="POLICY">Policy</option> </select>  <br>
+            <span style="font-weight: bold;">Parent Name                 </span> <select id="parent_name"  style="margin-top: 5px;"> <option value="SUBMISSIONS">Submissions</option> <option value="POLICY">Policy</option> </select>  <br>      
+            <span style="font-weight: bold;">State Code                     </span>          
+            <select id="state_code"  style="margin-top: 5px;">                
+                <option value="NC">NC</option>
+                <option value="WI">WI</option>
+                <option value="MA">MA</option>
+                <option value="MI">MI</option>
+                <option value="TN">TN</option>
+                <option value="NH">NH</option>
+                <option value="US">US</option>
+                <option value="AK">AK</option>
+                <option value="OK">OK</option>
+                <option value="KY">KY</option>
+                <option value="CO">CO</option>
+                <option value="NV">NV</option>
+                <option value="SD">SD</option>
+                <option value="PA">PA</option>
+                <option value="WV">WV</option>
+                <option value="GA">GA</option>
+                <option value="RI">RI</option>
+                <option value="IN">IN</option>
+                <option value="DC">DC</option>
+                <option value="MD">MD</option>
+                <option value="OR">OR</option>
+                <option value="CT">CT</option>
+                <option value="AR">AR</option>
+                <option value="MN">MN</option>
+                <option value="AL">AL</option>
+                <option value="ID">ID</option>
+                <option value="TX">TX</option>
+                <option value="NM">NM</option>
+                <option value="ND">ND</option>
+                <option value="ME">ME</option>
+                <option value="IL">IL</option>
+                <option value="MO">MO</option>
+                <option value="SC">SC</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="CA">CA</option>
+                <option value="WY">WY</option>
+                <option value="HI">HI</option>
+                <option value="OH">OH</option>
+                <option value="NE">NE</option>
+                <option value="VT">VT</option>
+                <option value="NY">NY</option>
+                <option value="MS">MS</option>
+                <option value="NJ">NJ</option>
+                <option value="IA">IA</option>
+                <option value="KS">KS</option>
+                <option value="LA">LA</option>
+                <option value="WA">WA</option>
+                <option value="AZ">AZ</option>
+                <option value="MT">MT</option>
+                <option value="VA">VA</option>
+            </select>  <br>   
+            <span style="font-weight: bold;">User Input Flag             </span> <select id="user_input_flag"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>      
+            <span style="font-weight: bold;">Template Type               </span> <select id="template_type"  style="margin-top: 5px;"> <option value="PDF">PDF</option><option value=""></option> </select>  <br>      
+            
+        </div>  
+        <div style="margin-left: 40px">
+            <input placeholder="Object Name" class="form-label " size="50" id="object_name"/><br>
+            <input placeholder="Output Codes" class="form-label " size="50" id="output_codes"/><br>
+            <input placeholder="Parameters To Pass" class="form-label " size="50" id="parameters_to_pass"/><br>
+            <input placeholder="Production Order" class="form-label " size="50" id="production_order"/><br>
+            <input placeholder="Security Profile Code" class="form-label " size="50" id="security_profile_code"/><br>
+            <input placeholder="Sub Parent Name 1" class="form-label " size="50" id="sub_parent_name_1"/><br>
+            <input placeholder="Sub Parent Name 2" class="form-label " size="50" id="sub_parent_name_2"/><br>
+            <input placeholder="Sub Parent Name 3" class="form-label " size="50" id="sub_parent_name_3"/><br>
+            <input placeholder="Sub Parent Name 4" class="form-label " size="50" id="sub_parent_name_4"/><br>
+            <input placeholder="Mapping XML" class="form-label " size="50" id="mapping_xml"/><br>
+            <input placeholder="Product Group" class="form-label " size="50" id="product_group"/><br>
+            <input placeholder="Sign Supported" class="form-label " size="50" id="sign_supported"/><br>
+            <input placeholder="Include In Merge" class="form-label " size="50" id="include_in_merge"/><br>
+            <input placeholder="Output Filename Prefix" class="form-label " size="50" id="output_file_name_prefix"/><br>
+            <input placeholder="Form Code To Print" class="form-label " size="50" id="form_code_to_print"/><br>
+        </div>             
 
     </div>
     <button style="margin-top: 20px" id="generate" class="btn btn-danger">Generate Query</button> <br>
