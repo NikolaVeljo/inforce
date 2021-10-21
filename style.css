@@ -1,7 +1,11 @@
 .btn:focus {
     box-shadow: none;
-};
-.hidden {
-    display: none;
 }
 
+#mapping_xml::placeholder, #form_number::placeholder, #file_name::placeholder, #form_code::placeholder {
+    color: red;
+}
+
+#module::selection, #owner_object::selection, #parent_name::selection {
+    color: rgb(47, 0, 255);
+}
