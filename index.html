@@ -14,25 +14,39 @@
 
      <div style="display: flex;">
         <div>
-            <input placeholder="Forms Definitions UID" id="forms_definitions_uid" class="form-label " size="50"/> <br>
-            <input placeholder="Licensee Code" id="licensee_code" class="form-label " size="50"/><br>
             <input disabled class="form-label " type="date"/>   Add Date Time (auto filled) <br>            
-            <input placeholder="Added By (Your Username)" id="added_by" class="form-label " size="50"/><br>
             <input type="date" class="form-label " id="begin_date"/>   Begin Date<br>
             <input type="date" class="form-label " id="revision_date"/>   Revision Date<br>
             <input class="form-label " type="date" disabled/>   Change Date Time (auto filled)<br>
-            <input placeholder="Changed By (Your Username)" class="form-label " size="50" id="changed_by"/><br>
             <input class="form-label " size="50" id="end_date" type="date"/>   End Date<br>
+            <input placeholder="Form List Order" class="form-label " size="50" id="form_list_order" type="number"/><br>
+            <input placeholder="Forms Definitions UID" id="forms_definitions_uid" class="form-label " size="50"/> <br>
+            <input placeholder="Licensee Code" id="licensee_code" class="form-label " size="50"/><br>
+            <input placeholder="Added By (Your Username)" id="added_by" class="form-label " size="50"/><br>
+            <input placeholder="Changed By (Your Username)" class="form-label " size="50" id="changed_by"/><br>
             <input placeholder="File Name" class="form-label " size="50" id="file_name"/><br>
             <input placeholder="Form Code" class="form-label " size="50" id="form_code"/><br>
+            <input placeholder="Form Code Alt" class="form-label " size="50" id="form_code_alt"/><br>
+            <input placeholder="Form Name" class="form-label " size="50" id="form_name"/><br>
         </div>
         <div style="margin-left: 40px">
-            <input placeholder="Form Code Alt" class="form-label " size="50" id="form_code_alt"/><br>
-            <input placeholder="Form List Order" class="form-label " size="50" id="form_list_order" type="number"/><br>
-            <input placeholder="Form Name" class="form-label " size="50" id="form_name"/><br>
             <input placeholder="Form Name Print" class="form-label " size="50" id="form_name_print"/><br>
             <input placeholder="Form Number" class="form-label " size="50" id="form_number"/><br>
             <input placeholder="Group Print Order" class="form-label " size="50" id="group_print_order"/><br>      
+            <input placeholder="Object Name" class="form-label " size="50" id="object_name"/><br>
+            <input placeholder="Output Codes" class="form-label " size="50" id="output_codes"/><br>
+            <input placeholder="Parameters To Pass" class="form-label " size="50" id="parameters_to_pass"/><br>
+            <input placeholder="Production Order" class="form-label " size="50" id="production_order"/><br>
+            <input placeholder="Security Profile Code" class="form-label " size="50" id="security_profile_code"/><br>
+            <input placeholder="Sub Parent Name 1" class="form-label " size="50" id="sub_parent_name_1"/><br>
+            <input placeholder="Sub Parent Name 2" class="form-label " size="50" id="sub_parent_name_2"/><br>
+            <input placeholder="Sub Parent Name 3" class="form-label " size="50" id="sub_parent_name_3"/><br>
+            <input placeholder="Sub Parent Name 4" class="form-label " size="50" id="sub_parent_name_4"/><br>
+            <input placeholder="Mapping XML" class="form-label " size="50" id="mapping_xml"/><br>
+
+        </div>    
+        <div style="margin-left: 40px">
+           
             <span style="font-weight: bold;">Include in forms list       </span> <select id="include_in_forms_list" style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>   
             <span style="font-weight: bold;">Include On Policy Dec   </span> <select id="include_on_policy_dec"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>    
             <span style="font-weight: bold;">Internal Use Only          </span> <select id="internal_use_only_flag"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>  
@@ -95,30 +109,17 @@
             </select>  <br>   
             <span style="font-weight: bold;">User Input Flag             </span> <select id="user_input_flag"  style="margin-top: 5px;"> <option value="Y">Yes</option> <option value="N">No</option> </select>  <br>      
             <span style="font-weight: bold;">Template Type               </span> <select id="template_type"  style="margin-top: 5px;"> <option value="PDF">PDF</option><option value=""></option> </select>  <br>      
-            
-        </div>  
-        <div style="margin-left: 40px">
-            <input placeholder="Object Name" class="form-label " size="50" id="object_name"/><br>
-            <input placeholder="Output Codes" class="form-label " size="50" id="output_codes"/><br>
-            <input placeholder="Parameters To Pass" class="form-label " size="50" id="parameters_to_pass"/><br>
-            <input placeholder="Production Order" class="form-label " size="50" id="production_order"/><br>
-            <input placeholder="Security Profile Code" class="form-label " size="50" id="security_profile_code"/><br>
-            <input placeholder="Sub Parent Name 1" class="form-label " size="50" id="sub_parent_name_1"/><br>
-            <input placeholder="Sub Parent Name 2" class="form-label " size="50" id="sub_parent_name_2"/><br>
-            <input placeholder="Sub Parent Name 3" class="form-label " size="50" id="sub_parent_name_3"/><br>
-            <input placeholder="Sub Parent Name 4" class="form-label " size="50" id="sub_parent_name_4"/><br>
-            <input placeholder="Mapping XML" class="form-label " size="50" id="mapping_xml"/><br>
-            <input placeholder="Product Group" class="form-label " size="50" id="product_group"/><br>
+            <input placeholder="Product Group" class="form-label mt-4" size="50" id="product_group"/><br>
             <input placeholder="Sign Supported" class="form-label " size="50" id="sign_supported"/><br>
             <input placeholder="Include In Merge" class="form-label " size="50" id="include_in_merge"/><br>
             <input placeholder="Output Filename Prefix" class="form-label " size="50" id="output_file_name_prefix"/><br>
             <input placeholder="Form Code To Print" class="form-label " size="50" id="form_code_to_print"/><br>
-        </div>             
+        </div>          
 
     </div>
-    <center><button style="margin-top: 20px" id="generate" class="btn btn-danger">Generate Query</button></center> <br>
-    <div class="d-none" id="showQuery">
-        <textarea cols="180" rows="15" id="finalQuery" style="margin-top: 20px;"></textarea>
+    <center><button hidden style="margin-top: 20px" id="generate" class="btn btn-danger">Generate Query</button></center> <br>
+    <div class="d-none mb-5" id="showQuery">
+        <textarea cols="180" rows="13" id="finalQuery" style="margin-top: 20px;"></textarea>
     </div>
 </div>
 

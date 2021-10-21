@@ -72,7 +72,7 @@ END
 
 };
 
-generate.addEventListener('click', generateQuery);
+// generate.addEventListener('click', generateQuery);
 window.addEventListener('change', generateQuery);
 
 
