@@ -2,10 +2,10 @@
     box-shadow: none;
 }
 
-#mapping_xml::placeholder, #form_number::placeholder, #file_name::placeholder, #form_code::placeholder {
-    color: red;
+body {
+    font-size: 14px;
 }
 
-#module::selection, #owner_object::selection, #parent_name::selection {
-    color: rgb(47, 0, 255);
+#mapping_xml::placeholder, #form_number::placeholder, #file_name::placeholder, #form_code::placeholder {
+    color: red;
 }
