@@ -73,6 +73,6 @@ END
 };
 
 // generate.addEventListener('click', generateQuery);
-window.addEventListener('change', generateQuery);
+window.addEventListener('keypress', generateQuery);
 
 
