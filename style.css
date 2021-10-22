@@ -28,3 +28,7 @@ body {
 #forms_definitions_menu:hover, #forms_definitions_pointers_menu:hover {
     color: black;
 }
+
+#forms_definitions {
+    margin-left: 40px;
+} 
