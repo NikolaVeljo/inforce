@@ -151,26 +151,29 @@ const formatDate = (date) => {
     return month + '/' + day + '/' + year; 
 };
 
+const splitedValue = (data) => data.value.split(',').map(x => x.trim()); 
+
+
 const generatePointers = (e) => {
 
-    let forms_definitions_pointers_uid_array = forms_definitions_pointers_uid.value.split(',').map(x => x.trim());
-    let lookup_column_array = lookup_column.value.split(',').map(x => x.trim());
-    let lookup_list_array = lookup_list.value.split(',').map(x => x.trim());
-    let lookup_object_array = lookup_object.value.split(',').map(x => x.trim());
-    let lookup_order_array = lookup_order.value.split(',').map(x => x.trim());
-    let lookup_query_array = lookup_query.value.split(',').map(x => x.trim());
-    let pointer_table_name_array = pointer_table_name.value.split(',').map(x => x.trim());
-    let print_flag_array = print_flag.value.split(',').map(x => x.trim());
-    let question_order_array = question_order.value.split(',').map(x => x.trim());
-    let question_text_array = question_text.value.split(',').map(x => x.trim());
-    let question_text_print_array = question_text_print.value.split(',').map(x => x.trim());
-    let required_flag_array = required_flag.value.split(',').map(x => x.trim());
-    let response_code_group_array = response_code_group.value.split(',').map(x => x.trim());
-    let response_default_array = response_default.value.split(',').map(x => x.trim());
-    let response_example_text_array = response_example_text.value.split(',').map(x => x.trim());
-    let response_size_array = response_size.value.split(',').map(x => x.trim());
-    let response_type_array = response_type.value.split(',').map(x => x.trim());
-    let visible_flag_array = visible_flag.value.split(',').map(x => x.trim());
+    let forms_definitions_pointers_uid_array = splitedValue(forms_definitions_pointers_uid)
+    let lookup_column_array = splitedValue(lookup_column)
+    let lookup_list_array = splitedValue(lookup_list)
+    let lookup_object_array = splitedValue(lookup_object)
+    let lookup_order_array = splitedValue(lookup_order)
+    let lookup_query_array = splitedValue(lookup_query)
+    let pointer_table_name_array = splitedValue(pointer_table_name)
+    let print_flag_array = splitedValue(print_flag)
+    let question_order_array = splitedValue(question_order)
+    let question_text_array = splitedValue(question_text)
+    let question_text_print_array = splitedValue(question_text_print)
+    let required_flag_array = splitedValue(required_flag)
+    let response_code_group_array = splitedValue(response_code_group)
+    let response_default_array = splitedValue(response_default)
+    let response_example_text_array = splitedValue(response_example_text)
+    let response_size_array = splitedValue(response_size)
+    let response_type_array = splitedValue(response_type)
+    let visible_flag_array = splitedValue(visible_flag)
 
 
     while (add_pointers.firstChild) {
