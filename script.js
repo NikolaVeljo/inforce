@@ -3,10 +3,11 @@
 const generate = document.getElementById('generate');
 const finalQuery = document.getElementById('finalQuery');
 const showQuery = document.getElementById('showQuery');
+const main_menu = document.getElementById('main_menu');
 
 const forms_definitions_uid = document.getElementById('forms_definitions_uid');
+const forms_definitions = document.getElementById('forms_definitions');
 const licensee_code = document.getElementById('licensee_code');
-// const add_date_time = 'getdate()';
 const added_by = document.getElementById('added_by');
 const begin_date = document.getElementById('begin_date');
 const change_date_time = document.getElementById('change_date_time');
@@ -50,6 +51,7 @@ const begin_date_checkbox = document.getElementById('begin_date_checkbox');
 const revision_date_checkbox = document.getElementById('revision_date_checkbox');
 const change_date_time_checkbox = document.getElementById('change_date_time_checkbox');
 const end_date_checkbox = document.getElementById('end_date_checkbox');
+const forms_definitions_pointers = document.getElementById('forms_definitions_pointers');
 
 
 add_date_time_checkbox.addEventListener('click', ()=> { 
@@ -97,7 +99,18 @@ end_date_checkbox.addEventListener('click', ()=> {
     }
 });
 
-
+main_menu.addEventListener('click', (e) => {
+    console.log(e.target.id);
+    if(e.target.id === 'forms_definitions_menu') {
+        forms_definitions.classList.remove('d-none');
+        forms_definitions_pointers.classList.add('d-none');
+    }
+    else if (e.target.id === 'forms_definitions_pointers_menu') {
+        forms_definitions.classList.add('d-none');
+        forms_definitions_pointers.classList.remove('d-none');
+    }
+    else return;
+});
 
 const formatDate = (date) => {
     const month = Number(date.split('-')[1][0]) === 0 ? date.split('-')[1][1] : date.split('-')[1];
@@ -113,19 +126,15 @@ const generateQuery = (e) => {
     finalQuery.value = 
     `IF NOT EXISTS (SELECT 1 FROM forms_definitions  WHERE   forms_definitions_uid = '${forms_definitions_uid.value.trim()}' and licensee_code = '${licensee_code.value.trim()}')
      BEGIN
-     INSERT  INTO forms_definitions ( forms_definitions_uid, licensee_code, add_date_time, added_by, begin_date, change_date_time, 
-        changed_by, end_date, file_name, form_code, form_code_alt, form_list_order, form_name, form_name_print, form_number, group_print_order, 
-        include_in_forms_list, include_on_policy_dec, internal_use_only_flag, module, object_name, output_codes, owner_object, parameters_to_pass, 
-        parent_name, production_order, revision_date, security_profile_code, state_code, sub_parent_name_1, sub_parent_name_2, sub_parent_name_3, 
-        sub_parent_name_4, user_input_flag, template_type, mapping_xml, product_group, sign_supported, include_in_merge, output_file_name_prefix, form_code_to_print)
-
-        VALUES ('${forms_definitions_uid.value.trim()}', '${licensee_code.value.trim()}', ${!add_date_time.value ? 'getdate()' : formatDate(add_date_time.value)}, '${added_by.value.trim()}', '${!begin_date.value ? `1/1/${date.getFullYear()}` : formatDate(begin_date.value)}', ${!change_date_time.value ? 'getdate()' : formatDate(change_date_time.value)}, '${changed_by.value.trim()}', ${end_date.value === '' ? 'null' : "'" + formatDate(end_date.value) + "'"}, '${file_name.value.trim()}', '${form_code.value.trim()}', '${form_code_alt.value.trim()}', '${form_list_order.value === '' ? '0' : form_list_order.value}', '${form_name.value.trim()}', '${form_name_print.value.trim()}', '${form_number.value.trim()}', '${group_print_order.value.trim()}', '${include_in_forms_list.value}', '${include_on_policy_dec.value}', '${internal_use_only_flag.value}',
-        '${module.value}', '${object_name.value}', '${output_codes.value}', '${owner_object.value}', '${parameters_to_pass.value.trim()}', '${parent_name.value}', '${production_order.value.trim()}', '${!revision_date.value ? 'getdate()' : formatDate(revision_date.value)}', '${security_profile_code.value.trim()}', '${state_code.value}',
-         '${sub_parent_name_1.value.trim()}', '${sub_parent_name_2.value.trim()}', '${sub_parent_name_3.value.trim()}', '${sub_parent_name_4.value.trim()}', '${user_input_flag.value}', '${template_type.value}', '${mapping_xml.value.trim()}', '${product_group.value.trim()}', ${sign_supported.value.trim() === '' ? 'NULL' :  "'" + sign_supported.value.trim() + "'"}, ${include_in_merge.value.trim() === '' ? 'NULL' :  "'" + include_in_merge.value.trim() + "'"}, ${output_file_name_prefix.value.trim() === '' ? 'NULL' :  "'" + output_file_name_prefix.value.trim() + "'"}, ${form_code_to_print.value.trim() === '' ? 'NULL' :  "'" + form_code_to_print.value.trim() + "'"})
-END    
-    `;
+     INSERT INTO forms_definitions ( forms_definitions_uid, licensee_code, add_date_time, added_by, begin_date, change_date_time, 
+                 changed_by, end_date, file_name, form_code, form_code_alt, form_list_order, form_name, form_name_print, form_number, group_print_order, 
+                 include_in_forms_list, include_on_policy_dec, internal_use_only_flag, module, object_name, output_codes, owner_object, parameters_to_pass, 
+                 parent_name, production_order, revision_date, security_profile_code, state_code, sub_parent_name_1, sub_parent_name_2, sub_parent_name_3, 
+                 sub_parent_name_4, user_input_flag, template_type, mapping_xml, product_group, sign_supported, include_in_merge, output_file_name_prefix, form_code_to_print)
+    
+    VALUES     ('${forms_definitions_uid.value.trim()}', '${licensee_code.value.trim()}', ${!add_date_time.value ? 'getdate()' : formatDate(add_date_time.value)}, '${added_by.value.trim()}', '${!begin_date.value ? `1/1/${date.getFullYear()}` : formatDate(begin_date.value)}', ${!change_date_time.value ? 'getdate()' : formatDate(change_date_time.value)}, '${changed_by.value.trim()}', ${end_date.value === '' ? 'null' : "'" + formatDate(end_date.value) + "'"}, '${file_name.value.trim()}', '${form_code.value.trim()}', '${form_code_alt.value.trim()}', '${form_list_order.value === '' ? '0' : form_list_order.value}', '${form_name.value.trim()}', '${form_name_print.value.trim()}', '${form_number.value.trim()}', '${group_print_order.value.trim()}', '${include_in_forms_list.value}', '${include_on_policy_dec.value}', '${internal_use_only_flag.value}', '${module.value}', '${object_name.value}', '${output_codes.value}', '${owner_object.value}', '${parameters_to_pass.value.trim()}', '${parent_name.value}', '${production_order.value.trim()}', '${!revision_date.value ? 'getdate()' : formatDate(revision_date.value)}', '${security_profile_code.value.trim()}', '${state_code.value}', '${sub_parent_name_1.value.trim()}', '${sub_parent_name_2.value.trim()}', '${sub_parent_name_3.value.trim()}', '${sub_parent_name_4.value.trim()}', '${user_input_flag.value}', '${template_type.value}', '${mapping_xml.value.trim()}', '${product_group.value.trim()}', ${sign_supported.value.trim() === '' ? 'NULL' :  "'" + sign_supported.value.trim() + "'"}, ${include_in_merge.value.trim() === '' ? 'NULL' :  "'" + include_in_merge.value.trim() + "'"}, ${output_file_name_prefix.value.trim() === '' ? 'NULL' :  "'" + output_file_name_prefix.value.trim() + "'"}, ${form_code_to_print.value.trim() === '' ? 'NULL' :  "'" + form_code_to_print.value.trim() + "'"})
+END`;
         showQuery.classList.remove('d-none');
-
 };
 
 window.addEventListener('keyup', generateQuery);

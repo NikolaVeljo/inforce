@@ -8,9 +8,15 @@
     <title>Query Generator</title>
 </head>
 <body>
- <div class="container mt-4">
-
-   <center><h2>QUERY GENERATOR FOR OMS FORMS</h2></center> <br>
+    <div class="container mt-3">
+     <center>
+    <div id="main_menu" class="mb-3">
+     <span class="headline" id="forms_definitions_menu">Forms Definitions</span>                            
+     <span class="headline" id="forms_definitions_pointers_menu">Forms Definitions Pointers</span>
+    </div> 
+    </center>      
+<div class="d-none" id="forms_definitions">
+   <center><h3>QUERY GENERATOR FOR OMS FORMS</h3></center> <br>
 
      <div style="display: flex;">
         <div>
@@ -91,10 +97,19 @@
             <input placeholder="Form Code To Print" class="form-label " size="50" id="form_code_to_print"/><br>
         </div>          
     </div>
-    <center><button hidden style="margin-top: 20px" id="generate" class="btn btn-danger">Generate Query</button></center> <br>
-    <div class="d-none mb-5" id="showQuery">
-        <textarea cols="177" rows="13" id="finalQuery" style="margin-top: 20px;"></textarea>
+    <textarea cols="177" rows="13" id="finalQuery" style="margin-top: 20px;"></textarea>
     </div>
+    <!-- <center><button hidden style="margin-top: 20px" id="generate" class="btn btn-danger">Generate Query</button></center> <br> -->
+    </div>
+    </div>
+  
+
+
+  
+    <div class="d-none" id="forms_definitions_pointers">
+      <center>  <h1>IN PROGRESS... </h1>  </center>
+    </div>
+
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="script.js"></script>
