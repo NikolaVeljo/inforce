@@ -17,6 +17,7 @@
     </center>   
     
 
+
 <div class="d-none mt-3" id="forms_definitions">
    <!-- <center><h3>QUERY GENERATOR FOR OMS FORMS</h3></center> <br> -->
 
@@ -101,15 +102,47 @@
     </div>
     <textarea cols="177" rows="13" id="finalQuery" style="margin-top: 20px;"></textarea>
     </div>
-    <!-- <center><button hidden style="margin-top: 20px" id="generate" class="btn btn-danger">Generate Query</button></center> <br> -->
+    <!-- <center><button hidden style="margin-top: 3px" id="generate" class="btn btn-danger">Generate Query</button></center> <br> -->
     </div>
     </div>
   
 
 
   
-    <div class="d-none" id="forms_definitions_pointers">
-      <center>  <h1>IN PROGRESS... </h1>  </center>
+    <div class="container d-none mx-auto" id="forms_definitions_pointers">
+        <textarea cols="165" rows="1" id="forms_definitions_pointers_uid" style="margin-top: 3px;" placeholder="Add forms definitions pointers uid  separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="editable_flag" style="margin-top: 3px;" placeholder="Add editable_flag, separated by comma."></textarea>
+
+        <textarea cols="165" rows="1" id="lookup_column" style="margin-top: 3px;" placeholder="Add lookup_column, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="lookup_list" style="margin-top: 3px;" placeholder="Add lookup_list, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="lookup_object" style="margin-top: 3px;" placeholder="Add lookup_object, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="lookup_order" style="margin-top: 3px;" placeholder="Add lookup_order, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="lookup_query" style="margin-top: 3px;" placeholder="Add lookup_query, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="pointer_table_name" style="margin-top: 3px;" placeholder="Add pointer_table_name, separated by comma."></textarea>
+        <!-- <textarea cols="165" rows="1" id="pointer_table_uid" style="margin-top: 3px;" placeholder="Add pointer_table_uid, separated by comma."></textarea> -->
+        <textarea cols="165" rows="1" id="print_flag" style="margin-top: 3px;" placeholder="Add print_flag, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="question_order" style="margin-top: 3px;" placeholder="Add question_order, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="question_text" style="margin-top: 3px;" placeholder="Add question_text, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="question_text_print" style="margin-top: 3px;" placeholder="Add question_text_print, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="required_flag" style="margin-top: 3px;" placeholder="Add required_flag, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="response_code_group" style="margin-top: 3px;" placeholder="Add response_code_group, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="response_default" style="margin-top: 3px;" placeholder="Add response_default, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="response_example_text" style="margin-top: 3px;" placeholder="Add response_example_text, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="response_size" style="margin-top: 3px;" placeholder="Add response_size, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="response_type" style="margin-top: 3px;" placeholder="Add response_type, separated by comma."></textarea>
+        <textarea cols="165" rows="1" id="visible_flag" style="margin-top: 3px;" placeholder="Add visible_flag, separated by comma."></textarea>
+
+
+        <br>     <br>
+        <center><button class="btn btn-danger" style="margin-bottom: 40px; margin-left:10px;" id="generate_pointers">Generate</button> </center>
+
+     
+     <div id="add_pointers">
+        
+        </div> 
+
+
+        <!-- <textarea cols="177" rows="13" id="finalQueryPointers" style="margin-top: 3px;"></textarea> -->
     </div>
 
 </div>
