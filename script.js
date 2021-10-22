@@ -104,10 +104,14 @@ main_menu.addEventListener('click', (e) => {
     if(e.target.id === 'forms_definitions_menu') {
         forms_definitions.classList.remove('d-none');
         forms_definitions_pointers.classList.add('d-none');
+        forms_definitions_menu.style.color = '#ff8400';
+        forms_definitions_pointers_menu.style.color = 'white';
     }
     else if (e.target.id === 'forms_definitions_pointers_menu') {
         forms_definitions.classList.add('d-none');
         forms_definitions_pointers.classList.remove('d-none');
+        forms_definitions_menu.style.color = 'white';
+        forms_definitions_pointers_menu.style.color = '#ff8400';
     }
     else return;
 });
